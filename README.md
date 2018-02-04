@@ -1,13 +1,15 @@
-# angular-elements-loading-widget
+# angular-elements-loading-widget <br />
 
-loading-widget using @angular/elements - demo purpose
+loading-widget using @angular/elements - demo purpose <br />
 
-using the experimental `@angular/elements`
+using the experimental `@angular/elements` <br />
 
-it works only in browser that support WebComponents
+it works only in browser that support WebComponents <br />
 
-#use
-npm i
+#use <br />
 
-#build
-npm run build - create files in 'dist/' folder
+npm i <br />
+
+#build <br />
+
+npm run build - create files in 'dist/' folder <br />

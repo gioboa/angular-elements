@@ -17,7 +17,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "postbuild": "cp ./dist/* ./enviroments/html/dist/",
+    "postbuild":
+      "mkdir ./enviroments/html/dist && cp ./dist/* ./enviroments/html/dist/",
     "serve": "http-server ./enviroments/html/ -c=1"
   },
   "dependencies": {
