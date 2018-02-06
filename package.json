@@ -11,15 +11,17 @@
   "bugs": {
     "url": "https://github.com/gioboa/angular-elements-loading-widget/issues"
   },
-  "homepage":
-    "https://github.com/gioboa/angular-elements-loading-widget#readme",
+  "homepage": "https://github.com/gioboa/angular-elements-loading-widget#readme",
   "private": true,
   "license": "MIT",
   "scripts": {
+    "prebuild" : "rm -f ./enviroments/html/dist/main.bundle.js && rm -f ./enviroments/react/public/main.bundle.js && rm -f ./enviroments/vue/public/main.bundle.js",
     "build": "webpack",
-    "postbuild":
-      "mkdir ./enviroments/html/dist && cp ./dist/* ./enviroments/html/dist/",
-    "serve": "http-server ./enviroments/html/ -c=1"
+    "postbuild": "cp ./dist/* ./enviroments/html/dist/ && cp ./dist/* ./enviroments/react/public/ && cp ./dist/* ./enviroments/vue/public/",
+    "serve:html": "http-server ./enviroments/html/ -c-1 -o",
+    "serve:react": "cd ./enviroments/react/ && npm run serve",
+    "serve:vue": "cd ./enviroments/vue/ && npm run serve"
+
   },
   "dependencies": {
     "@angular/common": "^5.2.2",

@@ -13,3 +13,10 @@ npm i <br />
 #build <br />
 
 npm run build - create files in 'dist/' folder <br />
+
+#serve <br />
+
+from root dir: <br /> 
+  - npm run serve:html <br /> 
+  - npm run serve:react <br /> 
+  - npm run serve:vue <br /> 
