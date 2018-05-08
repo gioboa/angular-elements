@@ -117,11 +117,9 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation, ChangeDetect
 export class LoadingComponent {
   @Input() title;
   @Output() loadingEvent = new EventEmitter<string>();
-  public loading: boolean;
+  public loading: boolean = true;
 
-  constructor(private cd: ChangeDetectorRef) {
-    this.loading = true;
-  }
+  constructor(private cd: ChangeDetectorRef) {}
 
   public toggleLoading(): void {
     this.cd.detectChanges();
