@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'gioboa-loading-widget',
@@ -12,8 +12,8 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
         <div class="sk-cube3 sk-cube"></div>
       </div>
     </div>
-    <button (click)="loading = !loading">{{ !loading ? 'Start' : 'Stop'}}</button>
-    <button (click)="emitEvent()">Emit</button>
+    <button class="button" style="margin: 18px;" (click)="toggleLoading()">{{ !loading ? 'Start' : 'Stop'}}</button>
+    <button class="button" (click)="emitEvent()">Emit</button>
   `,
   styles: [
     `
@@ -106,6 +106,10 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
       height: 100px;
       width: 100%;
     }
+    .button {
+      height: 30px;
+      width: 43px;
+    }
   `
   ],
   encapsulation: ViewEncapsulation.Native
@@ -115,16 +119,13 @@ export class LoadingComponent {
   @Output() loadingEvent = new EventEmitter<string>();
   public loading: boolean;
 
-  constructor() {
+  constructor(private cd: ChangeDetectorRef) {
     this.loading = true;
   }
 
-  public startLoading(): void {
-    this.loading = true;
-  }
-
-  public stopLoading() {
-    this.loading = false;
+  public toggleLoading(): void {
+    this.cd.detectChanges();
+    this.loading = !this.loading;
   }
 
   public emitEvent() {
