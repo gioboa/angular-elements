@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation, ChangeDetect
 @Component({
   selector: 'gioboa-loading-widget',
   template: `
-    <h1>{{ loading ? title : 'stopped'}}</h1>
+    <span class="title">{{ loading ? title : 'stopped'}}</span>
     <div class="container">
       <div class="sk-folding-cube" *ngIf="loading">
         <div class="sk-cube1 sk-cube"></div>
@@ -109,6 +109,10 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation, ChangeDetect
     .button {
       height: 30px;
       width: 43px;
+    }
+    .title {
+      font-size: 20px;
+      margin: 34px;
     }
   `
   ],
