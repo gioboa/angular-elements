@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <loading-widget ref="elem" title="Loading..." />        
+        <gioboa-loading-widget ref="elem" title="Loading..." />        
       </div>
     );
   }

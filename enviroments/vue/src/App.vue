@@ -1,6 +1,6 @@
 <template>
   <div style="margin: 0 40%;">
-    <loading-widget title="Loading..."></loading-widget>
+    <gioboa-loading-widget title="Loading..."></gioboa-loading-widget>
   </div>
 </template>
 
@@ -10,12 +10,12 @@ export default {
   mounted() {
     /* eslint-disable no-console */
     console.log('mount');
-    const cmp = document.querySelector('loading-widget');
-    cmp.addEventListener('loadingEvent', (data) => {
+    const cmp = document.querySelector('gioboa-loading-widget');
+    cmp.addEventListener('loadingEvent', data => {
       console.log(data.detail);
     });
     /* eslint-enable no-console */
   },
-  methods: {},
+  methods: {}
 };
 </script>

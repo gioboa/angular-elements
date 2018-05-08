@@ -1,12 +1,12 @@
-import 'zone.js/dist/zone';
-
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { registerAsCustomElements } from '@angular/elements';
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-import { LoadingModule } from './loading.module';
-import { LoadingComponent } from './loading.component';
+if (environment.production) {
+  enableProdMode();
+}
 
-registerAsCustomElements([LoadingComponent], () =>
-  platformBrowserDynamic().bootstrapModule(LoadingModule)
-);
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));

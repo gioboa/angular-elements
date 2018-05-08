@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Html Angular Elements Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div style="margin: 0 40%">
+    <gioboa-loading-widget title="Loading..."></gioboa-loading-widget>
+  </div>
+  <script>
+    const cmp = document.querySelector('gioboa-loading-widget');
+    cmp.addEventListener('loadingEvent', (data) => {
+      console.log(data.detail);
+    });
+  </script>
+</body>
+
+</html>

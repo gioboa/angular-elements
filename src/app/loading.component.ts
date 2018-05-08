@@ -1,23 +1,18 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewEncapsulation
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'loading-widget',
+  selector: 'gioboa-loading-widget',
   template: `
     <h1>{{ loading ? title : 'stopped'}}</h1>
-    <div class="sk-folding-cube" *ngIf="loading">
-      <div class="sk-cube1 sk-cube"></div>
-      <div class="sk-cube2 sk-cube"></div>
-      <div class="sk-cube4 sk-cube"></div>
-      <div class="sk-cube3 sk-cube"></div>
+    <div class="container">
+      <div class="sk-folding-cube" *ngIf="loading">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
     </div>
-    <button (click)="loading = true">Start</button>
-    <button (click)="loading = false">Stop</button>
+    <button (click)="loading = !loading">{{ !loading ? 'Start' : 'Stop'}}</button>
     <button (click)="emitEvent()">Emit</button>
   `,
   styles: [
@@ -30,7 +25,6 @@ import {
       -webkit-transform: rotateZ(45deg);
               transform: rotateZ(45deg);
     }
-    
     .sk-folding-cube .sk-cube {
       float: left;
       width: 50%;
@@ -38,7 +32,7 @@ import {
       position: relative;
       -webkit-transform: scale(1.1);
           -ms-transform: scale(1.1);
-              transform: scale(1.1); 
+              transform: scale(1.1);
     }
     .sk-folding-cube .sk-cube:before {
       content: '';
@@ -72,7 +66,7 @@ import {
     }
     .sk-folding-cube .sk-cube3:before {
       -webkit-animation-delay: 0.6s;
-              animation-delay: 0.6s; 
+              animation-delay: 0.6s;
     }
     .sk-folding-cube .sk-cube4:before {
       -webkit-animation-delay: 0.9s;
@@ -82,32 +76,35 @@ import {
       0%, 10% {
         -webkit-transform: perspective(140px) rotateX(-180deg);
                 transform: perspective(140px) rotateX(-180deg);
-        opacity: 0; 
+        opacity: 0;
       } 25%, 75% {
         -webkit-transform: perspective(140px) rotateX(0deg);
                 transform: perspective(140px) rotateX(0deg);
-        opacity: 1; 
+        opacity: 1;
       } 90%, 100% {
         -webkit-transform: perspective(140px) rotateY(180deg);
                 transform: perspective(140px) rotateY(180deg);
-        opacity: 0; 
-      } 
+        opacity: 0;
+      }
     }
-    
     @keyframes sk-foldCubeAngle {
       0%, 10% {
         -webkit-transform: perspective(140px) rotateX(-180deg);
                 transform: perspective(140px) rotateX(-180deg);
-        opacity: 0; 
+        opacity: 0;
       } 25%, 75% {
         -webkit-transform: perspective(140px) rotateX(0deg);
                 transform: perspective(140px) rotateX(0deg);
-        opacity: 1; 
+        opacity: 1;
       } 90%, 100% {
         -webkit-transform: perspective(140px) rotateY(180deg);
                 transform: perspective(140px) rotateY(180deg);
-        opacity: 0; 
+        opacity: 0;
       }
+    }
+    .container {
+      height: 100px;
+      width: 100%;
     }
   `
   ],
