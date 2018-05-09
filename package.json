@@ -4,12 +4,12 @@
   "scripts": {
     "prebuild": "rm -rf ./dist/",
     "build": "ng build --prod --output-hashing=none",
-    "preserve:html": "find ./enviroments/html -name '*.js' -type f -delete",
-    "serve:html": "cp ./dist/angular-elements/*.js ./enviroments/html/ && http-server ./enviroments/html/ -c-1 -o",
-    "preserve:react": "find ./enviroments/react/public/ -name '*.js' -type f -delete && cp ./dist/angular-elements/*.js ./enviroments/react/public/",
-    "serve:react": "cd ./enviroments/react/ && npm i && npm run serve",
-    "preserve:vue": "find ./enviroments/vue/public/ -name '*.js' -type f -delete && cp ./dist/angular-elements/*.js ./enviroments/vue/public/",
-    "serve:vue": "cd ./enviroments/vue/ && npm i && npm run serve"
+    "preserve:html": "find ./environments/html -name '*.js' -type f -delete",
+    "serve:html": "cp ./dist/angular-elements/*.js ./environments/html/ && http-server ./environments/html/ -c-1 -o",
+    "preserve:react": "find ./environments/react/public/ -name '*.js' -type f -delete && cp ./dist/angular-elements/*.js ./environments/react/public/",
+    "serve:react": "cd ./environments/react/ && npm i && npm run serve",
+    "preserve:vue": "find ./environments/vue/public/ -name '*.js' -type f -delete && cp ./dist/angular-elements/*.js ./environments/vue/public/",
+    "serve:vue": "cd ./environments/vue/ && npm i && npm run serve"
   },
   "private": true,
   "dependencies": {
